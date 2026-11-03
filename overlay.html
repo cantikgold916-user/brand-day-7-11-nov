@@ -83,8 +83,7 @@
   /* ---------- Kad terapung ---------- */
   .card{width:212px;padding:22px 12px 18px;border-radius:30px;text-align:center;color:#fff;
     background:linear-gradient(160deg,rgba(138,74,28,.88),rgba(63,26,6,.9));
-    border:3px solid rgba(247,215,116,.75);box-shadow:0 18px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3);
-    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+    border:3px solid rgba(247,215,116,.75);box-shadow:0 18px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3)}
   .card .tag{display:inline-block;background:linear-gradient(180deg,#ff4d74,var(--red));color:#fff;font-weight:900;
     font-size:26px;padding:3px 20px;border-radius:12px;box-shadow:0 5px 0 #a8102f;margin-bottom:8px}
   .card .t1{font-weight:700;font-size:26px;opacity:.95}
@@ -99,8 +98,9 @@
   .ring-panel img{width:98px;filter:drop-shadow(0 6px 6px rgba(0,0,0,.28));animation:nudge 3.4s ease-in-out infinite}
   .ring-panel img + img{width:106px;margin-top:-2px;animation-delay:-1.7s}
   /* Lajur kanan: dikecilkan supaya muat antara muka host (x~860) dan potongan tepi phone (x~983) */
-  .giftcol{position:absolute;right:108px;top:900px;width:212px;display:flex;flex-direction:column;align-items:center;gap:36px;
-    transform:scale(.68);transform-origin:100% 0}
+  /* Guna zoom (bukan transform:scale) pada lapisan dalam: lebih stabil dalam browser LIVE Studio */
+  .giftcol{position:absolute;right:108px;top:900px}
+  .giftcol-in{zoom:.68;width:212px;display:flex;flex-direction:column;align-items:center;gap:36px}
   .card-right{position:relative;width:200px;padding:30px 10px 14px;--r:4deg;animation:bob 4.6s ease-in-out -1.3s infinite}
   .card-left .tag,.card-right .tag{position:absolute;top:-22px;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap;font-size:24px}
 
@@ -180,7 +180,7 @@
   <!-- Barang emas pop up di kiri (macam tap-tap like) -->
   <div id="goldpop"></div>
 
-  <div class="giftcol">
+  <div class="giftcol"><div class="giftcol-in">
     <div class="card card-right">
       <div class="tag">FREE GIFT!</div>
       <div class="t1">Hadiah Percuma</div>
@@ -192,7 +192,7 @@
       <div class="t3">Setiap sesi LIVE!</div>
     </div>
     <div class="cart">🛍️ Tekan<br>Beg Kuning!</div>
-  </div>
+  </div></div>
 
   <div class="abs safe">ZON KEPALA &amp; MUKA HOST<br>(kosong)</div>
   <div class="abs tt" style="left:0;top:0;width:1080px;height:262px">UI TIKTOK (profil, Follow, chip)</div>
