@@ -164,7 +164,7 @@
   </div>
 
   <div class="abs pills">
-    <div class="pill gold">7 – 11 NOVEMBER</div>
+    <div class="pill gold">HARI TERAKHIR · 11 NOV</div>
     <div class="pill red"><span class="dot"></span>HANYA DALAM LIVE</div>
   </div>
 
@@ -174,7 +174,6 @@
     <div class="off">OFF</div>
   </div>
 
-  <div class="abs sub">+ Voucher Melambak <em>&amp;</em> Free Gift setiap sesi!</div>
 
   <div class="abs ticker"><div class="ticker-track" id="ticker"></div></div>
 
@@ -188,7 +187,6 @@
       <div class="gift-item"><img src="img/kipas.png" alt=""><span>Kipas Mini</span></div>
       <div class="gift-item"><img src="img/jewelry-box.png" alt=""><span>Jewelry Box</span></div>
     </div>
-    <div class="t3">Setiap sesi LIVE!</div>
   </div>
 
   <div class="abs safe">ZON KEPALA &amp; MUKA HOST<br>(kosong)</div>
@@ -231,8 +229,7 @@
 
   // Running text (diulang 2x supaya loop lancar)
   const msgs = [
-    '<b>UP TO 21% OFF</b> hanya dalam LIVE',
-    '4 Sesi LIVE setiap hari: <b>9am–12pm</b> · <b>2pm–5pm</b> · <b>5.30–8.30pm</b> · <b>9pm–12am</b>',
+    '<b>Rantai Tangan Kendi Dubai</b> hanya ada di <b>Brand Day</b> ini sahaja · tiada di LIVE kemudian hari!',
     'Bayaran <b>HANYA</b> ke akaun syarikat <b>CANTIK GOLD (Public Bank)</b>',
     'Awas scammer! Kami tidak pernah DM minta bank in',
     'Follow <b>@cantikgold.hq</b> · <b>@cantikgold.beads</b> · <b>@cantikgold.jewelry</b>'
@@ -300,7 +297,8 @@
       {transform:`translate(${sway*.2}px,${-rise}px) scale(.7) rotate(0deg)`, opacity:0}
     ], {duration: rnd(3200, 4800), easing:'ease-out'}).onfinish = () => el.remove();
   }
-  if (!params.get('static')) {
+  // Pop-up barang emas di kiri dimatikan. Tambah ?goldpop=1 pada URL untuk hidupkan semula.
+  if (!params.get('static') && params.get('goldpop')) {
     (function loop(){ popGold(); setTimeout(loop, rnd(600, 1100)); })();
   }
 </script>
